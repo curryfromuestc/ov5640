@@ -1,0 +1,75 @@
+
+State Machine - |top_design|full_mover:full_mover_ins|angle_correction:angle_corr|single_num_index
+Name single_num_index.000 single_num_index.010 single_num_index.001 single_num_index.011 single_num_index.100 
+single_num_index.011 0 0 0 0 0 
+single_num_index.001 0 0 1 1 0 
+single_num_index.010 0 1 0 1 0 
+single_num_index.000 1 0 0 1 0 
+single_num_index.100 0 0 0 1 1 
+
+State Machine - |top_design|full_mover:full_mover_ins|servo_controller:servo_ins|bin2bcdascii:ascii_cov|try_pos
+Name try_pos.000 try_pos.010 try_pos.001 try_pos.011 
+try_pos.011 0 0 0 0 
+try_pos.001 0 0 1 1 
+try_pos.010 0 1 0 1 
+try_pos.000 1 0 0 1 
+
+State Machine - |top_design|debug_mux:debug_mux_ins|work_change_cnt
+Name work_change_cnt.011 work_change_cnt.010 work_change_cnt.001 work_change_cnt.000 work_change_cnt.100 
+work_change_cnt.000 0 0 0 0 0 
+work_change_cnt.001 0 0 1 1 0 
+work_change_cnt.010 0 1 0 1 0 
+work_change_cnt.011 1 0 0 1 0 
+work_change_cnt.100 0 0 0 1 1 
+
+State Machine - |top_design|capture:capture_ins|sdram_controller:u_meme_controller|sdram_interface:u_interface|sdram_interface_new_sdram_controller_0:new_sdram_controller_0|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |top_design|capture:capture_ins|sdram_controller:u_meme_controller|sdram_interface:u_interface|sdram_interface_new_sdram_controller_0:new_sdram_controller_0|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |top_design|capture:capture_ins|sdram_controller:u_meme_controller|sdram_interface:u_interface|sdram_interface_new_sdram_controller_0:new_sdram_controller_0|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |top_design|capture:capture_ins|sdram_controller:u_meme_controller|sdram_interface:u_interface|sdram_interface_new_sdram_controller_0:new_sdram_controller_0|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |top_design|I2C_AV_Config:I2C_AV_Config_0|i2c_master:u_i2c|state_c
+Name state_c.STOP state_c.SACK state_c.READ state_c.RACK state_c.WRITE state_c.START state_c.IDLE 
+state_c.IDLE 0 0 0 0 0 0 0 
+state_c.START 0 0 0 0 0 1 1 
+state_c.WRITE 0 0 0 0 1 0 1 
+state_c.RACK 0 0 0 1 0 0 1 
+state_c.READ 0 0 1 0 0 0 1 
+state_c.SACK 0 1 0 0 0 0 1 
+state_c.STOP 1 0 0 0 0 0 1 
+
+State Machine - |top_design|I2C_AV_Config:I2C_AV_Config_0|cmos_config:u_cfg|state_c
+Name state_c.WRITE state_c.WREQ state_c.IDLE state_c.WAIT 
+state_c.WAIT 0 0 0 0 
+state_c.IDLE 0 0 1 1 
+state_c.WREQ 0 1 0 1 
+state_c.WRITE 1 0 0 1 

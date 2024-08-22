@@ -1,0 +1,96 @@
+module I2C_AV_Config  // I2C配置模块
+(
+
+	input  rst,
+	input  CLK_1M,
+    input  clock_slow,
+
+	
+	//I2C Side
+	output				I2C_SCLK,	//I2C CLOCK
+	output				I2C_SDAT,	//I2C DATA
+	
+	output		reg 	Config_Done//Config Done
+	
+);
+
+// 利用ROM驱动I2C配置
+reg [15:0] storage_addr;
+
+i2c_rom i2c_rom_ins(
+    .address(storage_addr),
+    .clock(CLK_1M),
+    .q({I2C_SDAT,I2C_SCLK})
+);
+
+// 等待摄像头初始化完毕
+reg [1:0] delay_cnt;
+reg delay_out;
+always @(posedge clock_slow or negedge rst)
+begin
+    if (!rst)
+    begin
+        delay_cnt <= 2'b0;
+        delay_out <= 1'b0;
+    end
+    else
+    begin
+        if (delay_cnt == 2'b11)
+        begin
+            delay_out <= 1'b1;
+        end
+        else
+        begin
+            delay_cnt <= delay_cnt + 2'b1;
+        end
+    end
+end
+
+// 切换地址，使ROM配置I2C
+reg config_done;
+always @(negedge CLK_1M or negedge rst or negedge delay_out)
+begin
+    if (!rst || !delay_out)
+    begin
+        storage_addr <= 16'b0;
+        config_done <= 1'b0;
+    end
+    else
+    begin
+        if (storage_addr == 16'd43612)
+        begin
+            config_done <= 1'b1;
+        end
+        else
+        begin
+            storage_addr <= storage_addr + 16'b1;
+        end
+    end
+end
+
+// 配置完成之后，等待稳定后释放
+reg [1:0] delay_cnt_1;
+reg delay_out_1;
+always @(posedge clock_slow or negedge rst or negedge config_done)
+begin
+    if (!rst || !config_done)
+    begin
+        delay_cnt_1 <= 2'b0;
+        Config_Done <= 1'b0;
+    end
+    else
+    begin
+        if (delay_cnt_1 == 2'b11)
+        begin
+            Config_Done <= 1'b1;
+        end
+        else
+        begin
+            delay_cnt_1 <= delay_cnt_1 + 2'b1;
+        end
+    end
+end
+
+
+endmodule
+

@@ -1,0 +1,41 @@
+module angle_correction (
+    input [15:0] source_angle,
+    input [15:0] target_angle,
+    input [8:0] x_left,
+    input [8:0] x_right,
+
+    output reg [15:0] corrected_angle,
+);
+
+
+wire [12:0] angle_diff;
+
+wire [12:0] angle_diff_abs;
+
+// covent source and dest angle from ascii to number
+wire [12:0] source_angle_conv;
+wire [12:0] target_angle_conv;
+assign source_angle_conv = (source_angle[15:12] - 48) * 1000 + (source_angle[11:8] - 48) * 100
+                             + (source_angle[7:4] - 48) * 10 + (source_angle[3:0] - 48);
+assign target_angle_conv = (target_angle[15:12] - 48) * 1000 + (target_angle[11:8] - 48) * 100
+                             + (target_angle[7:4] - 48) * 10 + (target_angle[3:0] - 48);
+assign angle_diff = source_angle_conv - target_angle_conv + (x_right - x_left) * 10;
+
+always @(*) begin
+    if (angle_diff > 13'd2500)
+        angle_diff_abs <= angle_diff - 18'd1250;
+    else 
+        angle_diff_abs <= angle_diff;
+end
+
+
+always @(*) begin
+    corrected_angle[15:12] = (angle_diff_abs/1000) + 4'd48;
+    corrected_angle[11:8] = ((angle_diff_abs%1000)/100) + 4'd48;
+    corrected_angle[7:4] = ((angle_diff_abs%100)/10) + 4'd48;
+    corrected_angle[3:0] = (angle_diff_abs%10) + 4'd48;
+    
+end
+
+
+endmodule

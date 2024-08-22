@@ -1,0 +1,68 @@
+--lpm_mux CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" LPM_SIZE=2 LPM_WIDTH=15 LPM_WIDTHS=1 data result sel
+--VERSION_BEGIN 20.1 cbx_lpm_mux 2020:06:05:12:04:51:SJ cbx_mgl 2020:06:05:12:11:10:SJ  VERSION_END
+
+
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = lut 15 
+SUBDESIGN mux_hob
+( 
+	data[29..0]	:	input;
+	result[14..0]	:	output;
+	sel[0..0]	:	input;
+) 
+VARIABLE 
+	result_node[14..0]	: WIRE;
+	sel_node[0..0]	: WIRE;
+	w_data274w[1..0]	: WIRE;
+	w_data288w[1..0]	: WIRE;
+	w_data300w[1..0]	: WIRE;
+	w_data312w[1..0]	: WIRE;
+	w_data324w[1..0]	: WIRE;
+	w_data336w[1..0]	: WIRE;
+	w_data348w[1..0]	: WIRE;
+	w_data360w[1..0]	: WIRE;
+	w_data372w[1..0]	: WIRE;
+	w_data384w[1..0]	: WIRE;
+	w_data396w[1..0]	: WIRE;
+	w_data408w[1..0]	: WIRE;
+	w_data420w[1..0]	: WIRE;
+	w_data432w[1..0]	: WIRE;
+	w_data444w[1..0]	: WIRE;
+
+BEGIN 
+	result[] = result_node[];
+	result_node[] = ( ((sel_node[] & w_data444w[1..1]) # ((! sel_node[]) & w_data444w[0..0])), ((sel_node[] & w_data432w[1..1]) # ((! sel_node[]) & w_data432w[0..0])), ((sel_node[] & w_data420w[1..1]) # ((! sel_node[]) & w_data420w[0..0])), ((sel_node[] & w_data408w[1..1]) # ((! sel_node[]) & w_data408w[0..0])), ((sel_node[] & w_data396w[1..1]) # ((! sel_node[]) & w_data396w[0..0])), ((sel_node[] & w_data384w[1..1]) # ((! sel_node[]) & w_data384w[0..0])), ((sel_node[] & w_data372w[1..1]) # ((! sel_node[]) & w_data372w[0..0])), ((sel_node[] & w_data360w[1..1]) # ((! sel_node[]) & w_data360w[0..0])), ((sel_node[] & w_data348w[1..1]) # ((! sel_node[]) & w_data348w[0..0])), ((sel_node[] & w_data336w[1..1]) # ((! sel_node[]) & w_data336w[0..0])), ((sel_node[] & w_data324w[1..1]) # ((! sel_node[]) & w_data324w[0..0])), ((sel_node[] & w_data312w[1..1]) # ((! sel_node[]) & w_data312w[0..0])), ((sel_node[] & w_data300w[1..1]) # ((! sel_node[]) & w_data300w[0..0])), ((sel_node[] & w_data288w[1..1]) # ((! sel_node[]) & w_data288w[0..0])), ((sel_node[] & w_data274w[1..1]) # ((! sel_node[]) & w_data274w[0..0])));
+	sel_node[] = ( sel[0..0]);
+	w_data274w[] = ( data[15..15], data[0..0]);
+	w_data288w[] = ( data[16..16], data[1..1]);
+	w_data300w[] = ( data[17..17], data[2..2]);
+	w_data312w[] = ( data[18..18], data[3..3]);
+	w_data324w[] = ( data[19..19], data[4..4]);
+	w_data336w[] = ( data[20..20], data[5..5]);
+	w_data348w[] = ( data[21..21], data[6..6]);
+	w_data360w[] = ( data[22..22], data[7..7]);
+	w_data372w[] = ( data[23..23], data[8..8]);
+	w_data384w[] = ( data[24..24], data[9..9]);
+	w_data396w[] = ( data[25..25], data[10..10]);
+	w_data408w[] = ( data[26..26], data[11..11]);
+	w_data420w[] = ( data[27..27], data[12..12]);
+	w_data432w[] = ( data[28..28], data[13..13]);
+	w_data444w[] = ( data[29..29], data[14..14]);
+END;
+--VALID FILE

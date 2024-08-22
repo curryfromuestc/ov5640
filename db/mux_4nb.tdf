@@ -1,0 +1,50 @@
+--lpm_mux CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" LPM_SIZE=4 LPM_WIDTH=6 LPM_WIDTHS=2 data result sel
+--VERSION_BEGIN 20.1 cbx_lpm_mux 2020:06:05:12:04:51:SJ cbx_mgl 2020:06:05:12:11:10:SJ  VERSION_END
+
+
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = lut 12 
+SUBDESIGN mux_4nb
+( 
+	data[23..0]	:	input;
+	result[5..0]	:	output;
+	sel[1..0]	:	input;
+) 
+VARIABLE 
+	result_node[5..0]	: WIRE;
+	sel_node[1..0]	: WIRE;
+	w_data225w[3..0]	: WIRE;
+	w_data255w[3..0]	: WIRE;
+	w_data280w[3..0]	: WIRE;
+	w_data305w[3..0]	: WIRE;
+	w_data330w[3..0]	: WIRE;
+	w_data355w[3..0]	: WIRE;
+
+BEGIN 
+	result[] = result_node[];
+	result_node[] = ( (((w_data355w[1..1] & sel_node[0..0]) & (! (((w_data355w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data355w[2..2]))))) # ((((w_data355w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data355w[2..2]))) & (w_data355w[3..3] # (! sel_node[0..0])))), (((w_data330w[1..1] & sel_node[0..0]) & (! (((w_data330w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data330w[2..2]))))) # ((((w_data330w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data330w[2..2]))) & (w_data330w[3..3] # (! sel_node[0..0])))), (((w_data305w[1..1] & sel_node[0..0]) & (! (((w_data305w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data305w[2..2]))))) # ((((w_data305w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data305w[2..2]))) & (w_data305w[3..3] # (! sel_node[0..0])))), (((w_data280w[1..1] & sel_node[0..0]) & (! (((w_data280w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data280w[2..2]))))) # ((((w_data280w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data280w[2..2]))) & (w_data280w[3..3] # (! sel_node[0..0])))), (((w_data255w[1..1] & sel_node[0..0]) & (! (((w_data255w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data255w[2..2]))))) # ((((w_data255w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data255w[2..2]))) & (w_data255w[3..3] # (! sel_node[0..0])))), (((w_data225w[1..1] & sel_node[0..0]) & (! (((w_data225w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data225w[2..2]))))) # ((((w_data225w[0..0] & (! sel_node[1..1])) & (! sel_node[0..0])) # (sel_node[1..1] & (sel_node[0..0] # w_data225w[2..2]))) & (w_data225w[3..3] # (! sel_node[0..0])))));
+	sel_node[] = ( sel[1..0]);
+	w_data225w[] = ( data[18..18], data[12..12], data[6..6], data[0..0]);
+	w_data255w[] = ( data[19..19], data[13..13], data[7..7], data[1..1]);
+	w_data280w[] = ( data[20..20], data[14..14], data[8..8], data[2..2]);
+	w_data305w[] = ( data[21..21], data[15..15], data[9..9], data[3..3]);
+	w_data330w[] = ( data[22..22], data[16..16], data[10..10], data[4..4]);
+	w_data355w[] = ( data[23..23], data[17..17], data[11..11], data[5..5]);
+END;
+--VALID FILE

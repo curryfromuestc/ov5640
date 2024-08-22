@@ -1,0 +1,257 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "scl",
+					"strict" : false
+				},
+				{
+					"name" : "cam_rst",
+					"strict" : false
+				},
+				{
+					"name" : "config_down",
+					"strict" : false
+				},
+				{
+					"name" : "uart_pin",
+					"strict" : false
+				},
+				{
+					"name" : "uart_pin_1",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_csn",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_rasn",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_casn",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_wen",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_bank[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_bank[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pump_enable",
+					"strict" : false
+				},
+				{
+					"name" : "uart_test1",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_dq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "i2c_rst",
+					"strict" : false
+				},
+				{
+					"name" : "soft_rst",
+					"strict" : false
+				},
+				{
+					"name" : "move_to_home_enable",
+					"strict" : false
+				},
+				{
+					"name" : "mover_enable",
+					"strict" : false
+				},
+				{
+					"name" : "vsync",
+					"strict" : false
+				},
+				{
+					"name" : "mode_switch",
+					"strict" : false
+				},
+				{
+					"name" : "pclk",
+					"strict" : false
+				},
+				{
+					"name" : "d0",
+					"strict" : false
+				},
+				{
+					"name" : "d1",
+					"strict" : false
+				},
+				{
+					"name" : "d2",
+					"strict" : false
+				},
+				{
+					"name" : "d3",
+					"strict" : false
+				},
+				{
+					"name" : "d4",
+					"strict" : false
+				},
+				{
+					"name" : "d5",
+					"strict" : false
+				},
+				{
+					"name" : "d6",
+					"strict" : false
+				},
+				{
+					"name" : "d7",
+					"strict" : false
+				},
+				{
+					"name" : "test_change",
+					"strict" : false
+				},
+				{
+					"name" : "href",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

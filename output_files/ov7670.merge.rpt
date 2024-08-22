@@ -1,0 +1,577 @@
+Partition Merge report for ov7670
+Sat May 11 10:08:12 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Warnings
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                              ;
++------------------------------------+-------------------------------------------------+
+; Partition Merge Status             ; Successful - Sat May 11 10:08:12 2024           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; ov7670                                          ;
+; Top-level Entity Name              ; top_design                                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 5,898 / 6,272 ( 94 % )                          ;
+;     Total combinational functions  ; 5,621 / 6,272 ( 90 % )                          ;
+;     Dedicated logic registers      ; 1,914 / 6,272 ( 31 % )                          ;
+; Total registers                    ; 1977                                            ;
+; Total pins                         ; 73 / 180 ( 41 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 219,322 / 276,480 ( 79 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                  ;
+; Total PLLs                         ; 2 / 2 ( 100 % )                                 ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                ;
+; capture:capture_ins            ; User-created   ; Post-Fit          ; Post-Fit               ; capture:capture_ins            ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Partition Merge Partition Warnings                                        ;
++----------------------------+---------------------+------------------------+
+; Port                       ; Partition           ; Info                   ;
++----------------------------+---------------------+------------------------+
+; capture:capture_ins|cke    ; capture:capture_ins ; Driven by constant VCC ;
+; capture:capture_ins|dqm[1] ; capture:capture_ins ; Driven by constant GND ;
+; capture:capture_ins|dqm[0] ; capture:capture_ins ; Driven by constant GND ;
++----------------------------+---------------------+------------------------+
+Note: The Incremental Compilation Advisor can be used to get more detailed recommendations.
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                      ;
++---------------------------------------------+----------------------+---------------------+--------------------------------+
+; Statistic                                   ; Top                  ; capture:capture_ins ; hard_block:auto_generated_inst ;
++---------------------------------------------+----------------------+---------------------+--------------------------------+
+; Estimated Total logic elements              ; 5355 / 6272 ( 85 % ) ; 543 / 6272 ( 9 % )  ; 0 / 6272 ( 0 % )               ;
+;                                             ;                      ;                     ;                                ;
+; Total combinational functions               ; 5196                 ; 425                 ; 0                              ;
+; Logic element usage by number of LUT inputs ;                      ;                     ;                                ;
+;     -- 4 input functions                    ; 1929                 ; 176                 ; 0                              ;
+;     -- 3 input functions                    ; 2473                 ; 132                 ; 0                              ;
+;     -- <=2 input functions                  ; 794                  ; 117                 ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Logic elements by mode                      ;                      ;                     ;                                ;
+;     -- normal mode                          ; 3265                 ; 364                 ; 0                              ;
+;     -- arithmetic mode                      ; 1931                 ; 61                  ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Total registers                             ; 1585                 ; 392                 ; 0                              ;
+;     -- Dedicated logic registers            ; 1570 / 6272 ( 25 % ) ; 344 / 6272 ( 5 % )  ; 0 / 6272 ( 0 % )               ;
+;     -- I/O registers                        ; 30                   ; 96                  ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Virtual pins                                ; 0                    ; 0                   ; 0                              ;
+; I/O pins                                    ; 57                   ; 16                  ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 30 ( 0 % )       ; 0 / 30 ( 0 % )      ; 0 / 30 ( 0 % )                 ;
+; Total memory bits                           ; 219066               ; 256                 ; 0                              ;
+; Total RAM block bits                        ; 258048               ; 9216                ; 0                              ;
+; PLL                                         ; 0 / 2 ( 0 % )        ; 0 / 2 ( 0 % )       ; 2 / 2 ( 100 % )                ;
+; M9K                                         ; 28 / 30 ( 93 % )     ; 1 / 30 ( 3 % )      ; 0 / 30 ( 0 % )                 ;
+;                                             ;                      ;                     ;                                ;
+; Connections                                 ;                      ;                     ;                                ;
+;     -- Input Connections                    ; 1267                 ; 510                 ; 4                              ;
+;     -- Registered Input Connections         ; 1157                 ; 468                 ; 0                              ;
+;     -- Output Connections                   ; 142                  ; 124                 ; 1515                           ;
+;     -- Registered Output Connections        ; 5                    ; 101                 ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Internal Connections                        ;                      ;                     ;                                ;
+;     -- Total Connections                    ; 24126                ; 2927                ; 1521                           ;
+;     -- Registered Connections               ; 10222                ; 1710                ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; External Connections                        ;                      ;                     ;                                ;
+;     -- Top                                  ; 2                    ; 245                 ; 1162                           ;
+;     -- capture:capture_ins                  ; 245                  ; 32                  ; 357                            ;
+;     -- hard_block:auto_generated_inst       ; 1162                 ; 357                 ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Partition Interface                         ;                      ;                     ;                                ;
+;     -- Input Ports                          ; 21                   ; 16                  ; 4                              ;
+;     -- Output Ports                         ; 35                   ; 41                  ; 6                              ;
+;     -- Bidir Ports                          ; 17                   ; 16                  ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Registered Ports                            ;                      ;                     ;                                ;
+;     -- Registered Input Ports               ; 0                    ; 5                   ; 0                              ;
+;     -- Registered Output Ports              ; 0                    ; 33                  ; 0                              ;
+;                                             ;                      ;                     ;                                ;
+; Port Connectivity                           ;                      ;                     ;                                ;
+;     -- Input Ports driven by GND            ; 0                    ; 0                   ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                    ; 2                   ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                    ; 0                   ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                    ; 1                   ; 0                              ;
+;     -- Input Ports with no Source           ; 0                    ; 0                   ; 0                              ;
+;     -- Output Ports with no Source          ; 0                    ; 0                   ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 0                   ; 1                              ;
+;     -- Output Ports with no Fanout          ; 0                    ; 0                   ; 0                              ;
++---------------------------------------------+----------------------+---------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                                                                                         ;
++------------------------------------------+---------------------+---------------+-------------------+---------------------------------------------+
+; Name                                     ; Partition           ; Type          ; Location          ; Status                                      ;
++------------------------------------------+---------------------+---------------+-------------------+---------------------------------------------+
+; cam_rst                                  ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- cam_rst                           ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- cam_rst~output                    ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; clk                                      ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- clk                               ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- clk~input                         ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; config_down                              ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- config_down                       ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- config_down~output                ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d0                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d0                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d0~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[0]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d1                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d1                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d1~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[1]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d2                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d2                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d2~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[2]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d3                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d3                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d3~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[3]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d4                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d4                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d4~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[4]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d5                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d5                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d5~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[5]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d6                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d6                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d6~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[6]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; d7                                       ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- d7                                ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- d7~input                          ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|din[7]        ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; href                                     ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- href                              ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- href~input                        ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|href          ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; i2c_rst                                  ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- i2c_rst                           ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- i2c_rst~input                     ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; led0                                     ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- led0                              ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- led0~output                       ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; led1                                     ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- led1                              ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- led1~output                       ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; mode_switch                              ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- mode_switch                       ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- mode_switch~input                 ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; move_to_home_enable                      ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- move_to_home_enable               ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- move_to_home_enable~input         ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; mover_enable                             ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- mover_enable                      ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- mover_enable~input                ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; pclk                                     ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- pclk                              ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- pclk~input                        ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|pclk          ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; pump_enable                              ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- pump_enable                       ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- pump_enable~output                ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; pwdn                                     ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- pwdn                              ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- pwdn~output                       ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; rst                                      ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- rst                               ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- rst~input                         ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; rst1                                     ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- rst1                              ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- rst1~input                        ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; scl                                      ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- scl                               ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- scl~output                        ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sda                                      ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- sda                               ; Top                 ; Bidir Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- sda~output                        ; Top                 ; Output Buffer ; Unplaced          ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[0]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[0]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[0]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[0]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[10]                           ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[10]                    ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[10]~output             ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[10]      ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[11]                           ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[11]                    ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[11]~output             ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[11]      ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[12]                           ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[12]                    ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[12]~output             ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[12]      ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[1]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[1]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[1]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[1]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[2]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[2]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[2]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[2]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[3]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[3]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[3]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[3]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[4]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[4]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[4]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[4]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[5]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[5]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[5]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[5]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[6]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[6]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[6]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[6]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[7]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[7]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[7]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[7]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[8]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[8]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[8]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[8]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_addr[9]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_addr[9]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_addr[9]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|addr[9]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_bank[0]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_bank[0]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_bank[0]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|bank[0]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_bank[1]                            ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_bank[1]                     ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_bank[1]~output              ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|bank[1]       ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_casn                               ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_casn                        ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_casn~output                 ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|casn          ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_cke                                ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_cke                         ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_cke~output                  ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|cke           ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_clk                                ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_clk                         ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_clk~output                  ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|sdram_clk     ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_csn                                ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_csn                         ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_csn~output                  ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|csn           ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[0]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[0]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[0]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X9_Y0_N7    ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[0]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X9_Y0_N9   ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[10]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[10]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[10]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X23_Y0_N0   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[10]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X23_Y0_N2  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[11]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[11]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[11]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X25_Y0_N21  ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[11]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X25_Y0_N23 ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[12]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[12]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[12]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X21_Y0_N0   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[12]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X21_Y0_N2  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[13]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[13]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[13]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X21_Y0_N7   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[13]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X21_Y0_N9  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[14]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[14]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[14]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X23_Y0_N7   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[14]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X23_Y0_N9  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[15]                             ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[15]        ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[15]                      ; capture:capture_ins ; Bidir Pad     ; IOPAD_X23_Y0_N14  ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[15]~output ; capture:capture_ins ; Output Buffer ; IOOBUF_X23_Y0_N16 ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[1]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[1]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[1]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X5_Y0_N14   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[1]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X5_Y0_N16  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[2]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[2]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[2]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X1_Y0_N0    ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[2]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X1_Y0_N2   ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[3]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[3]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[3]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X1_Y0_N7    ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[3]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X1_Y0_N9   ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[4]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[4]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[4]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X3_Y0_N0    ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[4]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X3_Y0_N2   ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[5]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[5]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[5]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X0_Y5_N21   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[5]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X0_Y5_N23  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[6]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[6]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[6]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X0_Y4_N14   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[6]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X0_Y4_N16  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[7]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[7]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[7]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X0_Y4_N21   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[7]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X0_Y4_N23  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[8]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[8]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[8]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X28_Y0_N14  ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[8]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X28_Y0_N16 ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dq[9]                              ; Top                 ; Bidir Port    ; n/a               ;                                             ;
+;     -- capture:capture_ins|dq[9]         ; capture:capture_ins ; Bidir Port    ; n/a               ;                                             ;
+;     -- sdram_dq[9]                       ; capture:capture_ins ; Bidir Pad     ; IOPAD_X28_Y0_N7   ; Preserved from Post-Fit or Imported Netlist ;
+;     -- capture:capture_ins|dq[9]~output  ; capture:capture_ins ; Output Buffer ; IOOBUF_X28_Y0_N9  ; Preserved from Post-Fit or Imported Netlist ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dqm[0]                             ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_dqm[0]                      ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_dqm[0]~output               ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|dqm[0]        ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_dqm[1]                             ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_dqm[1]                      ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_dqm[1]~output               ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|dqm[1]        ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_rasn                               ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_rasn                        ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_rasn~output                 ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|rasn          ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; sdram_wen                                ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- sdram_wen                         ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- sdram_wen~output                  ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|wen           ; capture:capture_ins ; Output Port   ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; soft_rst                                 ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- soft_rst                          ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- soft_rst~input                    ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; test_change                              ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- test_change                       ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- test_change~input                 ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; uart_pin                                 ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- uart_pin                          ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- uart_pin~output                   ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; uart_pin_1                               ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- uart_pin_1                        ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- uart_pin_1~output                 ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; uart_pin_rec                             ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- uart_pin_rec                      ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- uart_pin_rec~input                ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; uart_test1                               ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- uart_test1                        ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- uart_test1~output                 ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; uart_test_2                              ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- uart_test_2                       ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- uart_test_2~output                ; Top                 ; Output Buffer ; Unplaced          ; Synthesized                                 ;
+;                                          ;                     ;               ;                   ;                                             ;
+; vsync                                    ; Top                 ; Input Port    ; n/a               ;                                             ;
+;     -- vsync                             ; Top                 ; Input Pad     ; Unplaced          ; Synthesized                                 ;
+;     -- vsync~input                       ; Top                 ; Input Buffer  ; Unplaced          ; Synthesized                                 ;
+;     -- capture:capture_ins|vsync         ; capture:capture_ins ; Input Port    ; n/a               ;                                             ;
+;                                          ;                     ;               ;                   ;                                             ;
+; xclk                                     ; Top                 ; Output Port   ; n/a               ;                                             ;
+;     -- xclk                              ; Top                 ; Output Pad    ; Unplaced          ; Synthesized                                 ;
+;     -- xclk~output                       ; Top                 ; Output Buffer ; Unplaced          ; Preserved from Synthesis Netlist (WYSIWYG)  ;
+;                                          ;                     ;               ;                   ;                                             ;
++------------------------------------------+---------------------+---------------+-------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                               ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 5,898 / 6,272 ( 94 % ) ;
+;                                             ;                        ;
+; Total combinational functions               ; 5621                   ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 2105                   ;
+;     -- 3 input functions                    ; 2605                   ;
+;     -- <=2 input functions                  ; 911                    ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 3629                   ;
+;     -- arithmetic mode                      ; 1992                   ;
+;                                             ;                        ;
+; Total registers                             ; 1977                   ;
+;     -- Dedicated logic registers            ; 1914                   ;
+;     -- I/O registers                        ; 126                    ;
+;                                             ;                        ;
+; I/O pins                                    ; 73                     ;
+; Total memory bits                           ; 219322                 ;
+;                                             ;                        ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+;                                             ;                        ;
+; Total PLLs                                  ; 2                      ;
+;     -- PLLs                                 ; 2                      ;
+;                                             ;                        ;
+; Maximum fan-out node                        ; comb~0                 ;
+; Maximum fan-out                             ; 1297                   ;
+; Total fan-out                               ; 26802                  ;
+; Average fan-out                             ; 3.38                   ;
++---------------------------------------------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                               ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------+
+; Name                                                                                                                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF           ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------+
+; I2C_AV_Config:I2C_AV_Config_0|i2c_rom:i2c_rom_ins|altsyncram:altsyncram_component|altsyncram_1k91:auto_generated|ALTSYNCRAM                                                                ; AUTO ; ROM              ; 43613        ; 2            ; --           ; --           ; 87226  ; i2c_logic.hex ;
+; capture:capture_ins|sdram_controller:u_meme_controller|wrfifo:wrfifo_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_2rk1:auto_generated|altsyncram_ta11:fifo_ram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 8            ; 16           ; 16           ; 256    ; None          ;
+; full_mover:full_mover_ins|servo_lut:servo_lut_ins|altsyncram:altsyncram_component|altsyncram_eea1:auto_generated|ALTSYNCRAM                                                                ; AUTO ; ROM              ; 2048         ; 64           ; --           ; --           ; 131072 ; servo_lut.hex ;
+; full_mover:full_mover_ins|servo_target_lut:servo_target_lut_inst|altsyncram:altsyncram_component|altsyncram_c891:auto_generated|ALTSYNCRAM                                                 ; AUTO ; ROM              ; 48           ; 16           ; --           ; --           ; 768    ; target.hex    ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Sat May 11 10:08:10 2024
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off ov7670 -c ov7670 --merge=on
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35006): Using previously generated Fitter netlist for partition "capture:capture_ins" File: E:/FPGA_PROJECT/ALTERA/ov7670_ojbk/ov7670/top_design.v Line: 222
+Info (35002): Resolved and merged 2 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Info (35048): Found 3 ports with constant drivers. For more information, refer to the Partition Merger report
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rst1" File: E:/FPGA_PROJECT/ALTERA/ov7670_ojbk/ov7670/top_design.v Line: 30
+Info (21057): Implemented 6211 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21060): Implemented 17 bidirectional pins
+    Info (21061): Implemented 6042 logic cells
+    Info (21064): Implemented 93 RAM segments
+    Info (21065): Implemented 2 PLLs
+Info: Quartus Prime Partition Merge was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4739 megabytes
+    Info: Processing ended: Sat May 11 10:08:12 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

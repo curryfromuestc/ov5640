@@ -1,0 +1,238 @@
+<qspi_flash version="1">
+    <flash>
+        <device_info>
+            <device_name>m25p16</device_name>
+            <device_id>0x20 0x20 0x15</device_id>
+            <device_io_voltage>3.0V/3.3V</device_io_voltage>
+            <device_density>16Mb</device_density>
+            <total_device_die>1</total_device_die>
+            <dummy_clock_cycle>0</dummy_clock_cycle>
+            <dummy_clock_cycle_x4>0</dummy_clock_cycle_x4>
+            <prog_flow_template>Micron</prog_flow_template>
+        </device_info>
+        <programming_flow>
+            <sfl>
+                <initialization>
+                    <action type="READ_REG">
+                        <name>Read ID</name>
+                        <command>0x9F</command>
+                        <data_length>3</data_length>
+                        <expected_data></expected_data>
+                        <expected_data_mask></expected_data_mask>
+                        <attempt_count>1</attempt_count>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write status register</name>
+                        <command>0x01</command>
+                        <data>0x0</data>
+                        <delay unit="us">15000</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write NVCR</name>
+                        <command>0xB1</command>
+                        <data>0xEE 0xFF</data>
+                        <delay unit="us">200000</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write VCR</name>
+                        <command>0x81</command>
+                        <data>0xFB</data>
+                        <delay unit="us">1</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write EVCR</name>
+                        <command>0x61</command>
+                        <data>0xFF</data>
+                        <delay unit="us">1</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Set 4 bytes addressing</name>
+                        <command>0xB7</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                </initialization>
+                <program>
+                    <action type="CUSTOM">
+                        <description>Program data</description>
+                        <direction>start</direction>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="WRITE_DATA">
+                        <name>Page program</name>
+                        <command>0x02</command>
+                        <address>JIC</address>
+                        <data>JIC</data>
+                        <page_size>256</page_size>
+                        <addressing_mode>4</addressing_mode>
+                        <delay unit="us">1000</delay>
+                        <bus_width>1-1-1</bus_width>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>End of data?</description>
+                        <direction>end</direction>
+                    </action>
+                </program>
+                <erase>
+                    <action type="CUSTOM">
+                        <description>Erase data</description>
+                        <direction>start</direction>
+                    </action>
+                    <action type="WRITE_REG">
+                        <name>Write enable</name>
+                        <command>0x06</command>
+                        <data></data>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="ERASE">
+                        <name>Sector erase</name>
+                        <command>0xD8</command>
+                        <address>JIC</address>
+                        <erase_size>65536</erase_size>
+                        <addressing_mode>4</addressing_mode>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="READ_REG">
+                        <name>Read flag status register</name>
+                        <command>0x70</command>
+                        <data_length>1</data_length>
+                        <expected_data>0x80</expected_data>
+                        <expected_data_mask>0x80</expected_data_mask>
+                        <attempt_count>30000</attempt_count>
+                        <delay unit="us">100</delay>
+                        <bus_width>1-1</bus_width>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>End of data?</description>
+                        <direction>end</direction>
+                    </action>
+                </erase>
+                <verify_blankcheck_examine>
+                    <action type="READ_DATA">
+                        <name>Read</name>
+                        <command>0x03</command>
+                        <address>JIC</address>
+                        <data_length>JIC</data_length>
+                        <expected_data>JIC</expected_data>
+                        <expected_data_mask>JIC</expected_data_mask>
+                        <addressing_mode>4</addressing_mode>
+                        <act_dummy_clock_cycle>0</act_dummy_clock_cycle>
+                        <delay unit="us">0</delay>
+                        <bus_width>1-1-1</bus_width>
+                    </action>
+                </verify_blankcheck_examine>
+                <termination/>
+            </sfl>
+            <sdm>
+                <initialization>
+                    <action type="CUSTOM">
+                        <description>Read device ID</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Enable quad mode\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Set 4 byte addressing if\nflash density is larger than 128Mb\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                </initialization>
+                <program>
+                    <action type="CUSTOM">
+                        <description>Program data</description>
+                        <direction>start</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Write enable</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Page program\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Polling status register for device busy\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>End of data?</description>
+                        <direction>end</direction>
+                    </action>
+                </program>
+                <erase>
+                    <action type="CUSTOM">
+                        <description>Erase data</description>
+                        <direction>start</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Write enable</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Erase\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>Polling status register for device busy\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                    <action type="CUSTOM">
+                        <description>End of data?</description>
+                        <direction>end</direction>
+                    </action>
+                </erase>
+                <verify_blankcheck_examine>
+                    <action type="CUSTOM">
+                        <description>Fast read\n(from Serial Flash Discoverable Parameter)</description>
+                        <direction>nil</direction>
+                    </action>
+                </verify_blankcheck_examine>
+                <termination/>
+            </sdm>
+        </programming_flow>
+    </flash>
+</qspi_flash>

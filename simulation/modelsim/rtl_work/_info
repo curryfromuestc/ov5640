@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/FPGA_PROJECT/ALTERA/ov7670/simulation/modelsim
+vcout
+Z1 !s110 1714382636
+!i10b 1
+!s100 RaT>FGkD1O]]OcOFCW@?I1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IX3jNhckikAZXIlH95I3^P3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1714312550
+8E:/FPGA_PROJECT/ALTERA/ov7670/cout.v
+FE:/FPGA_PROJECT/ALTERA/ov7670/cout.v
+!i122 1
+L0 1 331
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1714382636.000000
+!s107 E:/FPGA_PROJECT/ALTERA/ov7670/cout.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_PROJECT/ALTERA/ov7670|E:/FPGA_PROJECT/ALTERA/ov7670/cout.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670
+Z8 tCvgOpt 0
+vdebug_mux
+R1
+!i10b 1
+!s100 =joPOUJ029B?J^<KT7hEB1
+R2
+Ig^5b]E`^<Qi5zW[g:bm^=0
+R3
+R0
+w1714314548
+8E:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v
+FE:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v
+!i122 0
+L0 1 134
+R4
+r1
+!s85 0
+31
+!s108 1714382635.000000
+!s107 E:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_PROJECT/ALTERA/ov7670|E:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v|
+!i113 1
+R6
+R7
+R8
+vsensor_filter
+R1
+!i10b 1
+!s100 [nKgLKUfOBE=ObBN^GAY;3
+R2
+IM3d^^aoY95]>Zfe1C_[7Q3
+R3
+R0
+w1714311008
+8E:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v
+FE:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v
+!i122 3
+L0 1 179
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_PROJECT/ALTERA/ov7670|E:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v|
+!i113 1
+R6
+R7
+R8
+vuart_watcher
+R1
+!i10b 1
+!s100 7Pc=geGS76Pi8g1a8HaeV3
+R2
+I<7oWZj``:o[A3Pm7iJTa^0
+R3
+R0
+w1714309107
+8E:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v
+FE:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v
+!i122 2
+L0 1 389
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/FPGA_PROJECT/ALTERA/ov7670|E:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v|
+!i113 1
+R6
+R7
+R8

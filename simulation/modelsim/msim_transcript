@@ -1,0 +1,66 @@
+# Reading pref.tcl
+# do ov7670_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying E:/intelFPGA/modelsim/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:23:55 on Apr 29,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/FPGA_PROJECT/ALTERA/ov7670" E:/FPGA_PROJECT/ALTERA/ov7670/debug_mux.v 
+# -- Compiling module debug_mux
+# 
+# Top level modules:
+# 	debug_mux
+# End time: 17:23:56 on Apr 29,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/cout.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:23:56 on Apr 29,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/FPGA_PROJECT/ALTERA/ov7670" E:/FPGA_PROJECT/ALTERA/ov7670/cout.v 
+# -- Compiling module cout
+# 
+# Top level modules:
+# 	cout
+# End time: 17:23:56 on Apr 29,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:23:56 on Apr 29,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/FPGA_PROJECT/ALTERA/ov7670" E:/FPGA_PROJECT/ALTERA/ov7670/uart_watcher.v 
+# -- Compiling module uart_watcher
+# 
+# Top level modules:
+# 	uart_watcher
+# End time: 17:23:56 on Apr 29,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:23:56 on Apr 29,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/FPGA_PROJECT/ALTERA/ov7670" E:/FPGA_PROJECT/ALTERA/ov7670/sensor_filter.v 
+# -- Compiling module sensor_filter
+# 
+# Top level modules:
+# 	sensor_filter
+# End time: 17:23:56 on Apr 29,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/capture.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:23:56 on Apr 29,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/FPGA_PROJECT/ALTERA/ov7670" E:/FPGA_PROJECT/ALTERA/ov7670/capture.v 
+# -- Compiling module capture
+# ** Error (suppressible): E:/FPGA_PROJECT/ALTERA/ov7670/capture.v(137): (vlog-2388) 'frame_start_latch' already declared in this scope (capture) at E:/FPGA_PROJECT/ALTERA/ov7670/capture.v(112).
+# ** Error (suppressible): E:/FPGA_PROJECT/ALTERA/ov7670/capture.v(151): (vlog-2388) 'frame_over_latch' already declared in this scope (capture) at E:/FPGA_PROJECT/ALTERA/ov7670/capture.v(112).
+# End time: 17:23:56 on Apr 29,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: E:/intelFPGA/modelsim/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./ov7670_run_msim_rtl_verilog.do line 12
+# E:/intelFPGA/modelsim/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+E:/FPGA_PROJECT/ALTERA/ov7670 {E:/FPGA_PROJECT/ALTERA/ov7670/capture.v}"
